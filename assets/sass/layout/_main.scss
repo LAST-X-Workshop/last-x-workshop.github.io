@@ -46,7 +46,7 @@
 			}
 
 			&.featured {
-				text-align: center;
+				text-align: left;
 			}
 
 			@include breakpoint('<=large') {
