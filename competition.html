@@ -1,112 +1,223 @@
 <!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!-- Massively by HTML5 UP -->
 <html>
-	<head>
-		<title>Competition</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<head>
+	<title>Competition</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+	<style>
+		/* Animated title */
+		h2.animated-title {
+			color: red;
+			font-family: Arial, sans-serif;
+			animation: slideIn 3s infinite alternate;
+		}
 
-				<!-- Header -->
-					<header id="header">
-						<a href="competition.html" class="logo">Competition</a>
-					</header>
+		@keyframes slideIn {
+			0% { transform: translateX(-20px); opacity: 0.7; }
+			50% { transform: translateX(20px); opacity: 1; }
+			100% { transform: translateX(-20px); opacity: 0.7; }
+		}
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="callforpapers.html">Call for Papers</a></li>
-							<li class="active"><a href="competition.html">Competition</a></li>
-							<li><a href="callforcontributions.html">Call for Contributions</a></li>
-							<li><a href="program.html">Program</a></li>
-						</ul>
-						<!-- <ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-						</ul> -->
-					</nav>
+		/* Winners Layout */
+		.winners-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+			gap: 1rem;
+			margin-top: 1.5rem;
+		}
 
-				<!-- Main -->
-					<div id="main">
+		.winner-card {
+			padding: 1rem;
+			border-left: 5px solid #f39c12;
+			background: #fafafa;
+			border-radius: 6px;
+		}
 
-						<!-- Post -->
-							<section class="post">
-								<header class="major">
-									<h1>Competition</h1>
-								</header>
+		.winner-card h3 {
+			margin-bottom: 0.2rem;
+		}
 
-								<!-- Text stuff -->
-								<!-- <style>
-									/* Style the h2 */
-									h2.animated-title {
-									color: red;                     /* Text color */
-									text-align: left;             /* Centered text */
-									font-family: Arial, sans-serif; /* Clean font */
-									animation: slideIn 3s infinite alternate; /* Apply animation */
-									}
+		.winner-card p {
+			margin-bottom: 0.6rem;
+		}
 
-									/* Define the animation */
-									@keyframes slideIn {
-									0% {
-										transform: translateX(-20px);
-										opacity: 0.7;
-									}
-									50% {
-										transform: translateX(20px);
-										opacity: 1;
-									}
-									100% {
-										transform: translateX(-20px);
-										opacity: 0.7;
-									}
-									}
-								</style> -->
-								</head>
-								<body>
+		/* People layout */
+		.winner-photos {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.75rem;
+		}
 
-								<h2 class="animated-title">We are looking for community contributions!</h2>
+		.person {
+			width: 110px;
+			text-align: center;
+		}
 
-								<h2>Introduction</h2>
-								<p>We will host 4-hour student competitions that aim to let participants use LLMs to solve for security-related challenges. The competition will be divided into a “Software Challenge” track and a “Hardware Challenge” track. Both will involve students forming teams (1-3 persons each team) to use LLMs for solving specially designed challenges, and we will maintain a leader board to show competition results.</p>
+		.person img {
+			width: 110px;
+			height: 110px;
+			object-fit: cover;
+			border-radius: 6px;
+			border: 1px solid #ddd;
+		}
 
-								<p>This competition challenges student teams to LLMs to the detection of malicious software components and software bugs. Participants will be provided with specially designed software repositories containing manually crafted bugs and embedded malicious code snippets, along with CTF-style challenge problems. Teams may use locally deployed compilation and execution environments to analyze and test code. Within a fixed four-hour time window, participants must prompt and interact with LLMs to solve the challenges. Winners will be determined based on the number of correctly identified solutions. All interactions between participants and the LLMs will be logged and collected for evaluation purposes. </p>
+		.person-name {
+			font-size: 0.8em;
+			margin-top: 0.3rem;
+			line-height: 1.2;
+		}
+	</style>
+</head>
 
-								<h3 style="color: red;">How to Participate:</h3>
-								<p>Please use <a href="https://pilotcrew.ai/competition/ndss-2026-llm-assisted-security-and-trust-exploration-last-x">this link</a> to sign up for the competition!</p>
+<body class="is-preload">
 
-								<h2 class="animated-title">Call for Contributions</h2>
-								<p>We invite you to submit challenges! We expect submissions of circuit netlists intentionally embedded with hardware Trojans, or software source code containing backdoors or known vulnerabilities. If your submission gets selected and appear on the competition, you will get a certificate to acknowledge your contribution to the LAST-X Workshop!</p>
-								
-								<p>Please submit your challenge problem using <a href="https://forms.gle/2tiuL7HfeYT924Hv8">this Google form</a>.</p>
+<div id="wrapper">
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+	<!-- Header -->
+	<header id="header">
+		<a href="competition.html" class="logo">Competition</a>
+	</header>
+
+	<!-- Nav -->
+	<nav id="nav">
+		<ul class="links">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="callforpapers.html">Call for Papers</a></li>
+			<li class="active"><a href="competition.html">Competition</a></li>
+			<!-- <li><a href="callforcontributions.html">Call for Contributions</a></li> -->
+			<li><a href="program.html">Program</a></li>
+		</ul>
+	</nav>
+
+	<!-- Main -->
+	<div id="main">
+
+		<section class="post">
+
+			<header class="major">
+				<h1>Competition</h1>
+			</header>
+
+			<!-- <h2 class="animated-title">We are looking for community contributions!</h2> -->
+
+			<h2>Introduction</h2>
+			<p>
+				We will host 4-hour student competitions that aim to let participants use LLMs to solve
+				security-related challenges. In the competition, teams (1–3 members) will solve tasks and compete on a leaderboard.
+			</p>
+
+			<p>
+				This competition challenges student teams to use LLMs to detect malicious software and bugs.
+				Participants will analyze specially designed repositories with embedded vulnerabilities and
+				CTF-style problems. Winners are determined by the number of correct solutions.
+			</p>
+
+			<h3 style="color: red;">How to Participate:</h3>
+			<p>
+				<a href="https://pilotcrew.ai/competition/ndss-2026-llm-assisted-security-and-trust-exploration-last-x">
+					Sign up for the competition
+				</a>
+			</p>
+
+			<h2 class="animated-title">Call for Contributions</h2>
+			<p>
+				We invite challenge submissions, including hardware Trojans and vulnerable software.
+				Selected contributors will receive recognition certificates.
+			</p>
+
+			<p>
+				<a href="https://forms.gle/2tiuL7HfeYT924Hv8">
+					Submit your challenge here
+				</a>
+			</p>
+
+			<hr />
+
+			<!-- Winners Section -->
+			<header class="major">
+				<h2>🏆 Winners Announcement</h2>
+			</header>
+
+			<p>Congratulations to all teams who participated in the LAST-X Competition!</p>
+
+			<div class="winners-grid">
+
+				<!-- First Place -->
+				<div class="winner-card">
+					<h3>🥇 First Place</h3>
+					<p><strong>Fariza Siddiqua</strong></p>
+
+					<div class="winner-photos">
+						<div class="person">
+							<img src="images/Fariza.jpg" alt="">
+							<div class="person-name">Fariza Siddiqua</div>
+						</div>
 					</div>
+				</div>
+
+				<!-- Second Place -->
+				<div class="winner-card">
+					<h3>🥈 Second Place</h3>
+					<p><strong>Team Xumo</strong></p>
+
+					<div class="winner-photos">
+						<div class="person">
+							<img src="images/RongXu.PNG" alt="">
+							<div class="person-name">Rong Xu</div>
+						</div>
+
+						<div class="person">
+							<img src="images/XiaochanXue.png" alt="">
+							<div class="person-name">Xiaochan Xue</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Third Place -->
+				<div class="winner-card">
+					<h3>🥉 Third Place</h3>
+					<p><strong>Team TwinVectors</strong></p>
+
+					<div class="winner-photos">
+						<div class="person">
+							<img src="images/Ravikumar.jpg" alt="">
+							<div class="person-name">Ravikumar Selvam</div>
+						</div>
+
+						<div class="person">
+							<img src="images/ArchanaVenkatachalapathy.jpeg" alt="">
+							<div class="person-name">Archana Venkatachalapathy</div>
+						</div>
+					</div>
+				</div>
 
 			</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		</section>
+	</div>
 
-	</body>
+	<!-- Footer -->
+	<div id="copyright">
+		<ul>
+			<li>&copy; Untitled</li>
+			<li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+		</ul>
+	</div>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
 </html>
